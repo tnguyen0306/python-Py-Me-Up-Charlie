@@ -2,7 +2,6 @@
 
 import os
 import csv
-import numpy as np
 
 budget_csv = os.path.join(os.path.dirname(os.path.abspath(__file__)), "Resources", "budget_data.csv")
 
@@ -21,7 +20,7 @@ with open(budget_csv) as csv_file:
         
     month_count = len(month_list)
     
-    net_total = np.sum(profit_loss)
+    net_total = sum(profit_loss)
 
     for i in range(len(profit_loss)-1):
         monthly_change.append(profit_loss[i+1]-profit_loss[i])
