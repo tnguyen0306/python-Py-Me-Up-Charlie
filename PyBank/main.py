@@ -48,12 +48,12 @@ with open(budget_csv) as csv_file:
     print("Financial Analysis \n----------------------------")
     print(f"Total Months: {month_count}")
     print(f"Total: ${net_total}")
-    print(f"Average Change: {round(average_change,2)}")
+    print(f"Average Change: ${round(average_change,2)}")
     print(f"Greatest Increase in Profits: {max_month} (${max_increase})")
     print(f"Greatest Decrease in Profits: {min_month} (${min_increase})")
 
 #Assign the path to export the file
-output_file = os.path.join(os.path.dirname(os.path.abspath(__file__)), "Financial_Analysis.txt")
+output_file = os.path.join(os.path.dirname(os.path.abspath(__file__)), "analysis", "Financial_Analysis.txt")
 
 #Export file with assigned path
 with open(output_file,"w") as file:
@@ -62,7 +62,7 @@ with open(output_file,"w") as file:
     file.write("\n")
     file.write(f"Total: ${net_total}")
     file.write("\n")
-    file.write(f"Average Change: {round(average_change,2)}")
+    file.write(f"Average Change: ${round(average_change,2)}")
     file.write("\n")
     file.write(f"Greatest Increase in Profits: {max_month} (${max_increase})")
     file.write("\n")
