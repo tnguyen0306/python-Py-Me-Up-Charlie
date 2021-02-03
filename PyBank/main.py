@@ -16,7 +16,7 @@ monthly_change = []
 with open(budget_csv) as csv_file:
     csv_reader = csv.reader(csv_file, delimiter = ",")
 
-    #Skip the header in teh csv file
+    #Skip the header in the csv file
     csv_header = next(csv_file)
    
     #Create list of months and profit/loss
