@@ -39,11 +39,11 @@ with open(budget_csv) as csv_file:
     
     #Look up the greatest increase in profit and the month 
     max_increase = max(monthly_change)
-    max_month = month_list[monthly_change.index(max_increase)-1]
+    max_month = month_list[monthly_change.index(max_increase)+1]
     
     #Look up the greatest decrease in profit and the month 
     min_increase = min(monthly_change)
-    min_month = month_list[monthly_change.index(min_increase)-1]
+    min_month = month_list[monthly_change.index(min_increase)+1]
     
     #Print the Financial Analysis
     print("Financial Analysis \n----------------------------")
@@ -59,12 +59,8 @@ output_file = os.path.join(os.path.dirname(os.path.abspath(__file__)), "analysis
 #Export file with assigned path
 with open(output_file,"w") as file:
     file.write("Financial Analysis\n----------------------------\n")
-    file.write(f"Total Months: {month_count}")
-    file.write("\n")
-    file.write(f"Total: ${net_total}")
-    file.write("\n")
-    file.write(f"Average Change: ${round(average_change,2)}")
-    file.write("\n")
-    file.write(f"Greatest Increase in Profits: {max_month} (${max_increase})")
-    file.write("\n")
+    file.write(f"Total Months: {month_count}\n")
+    file.write(f"Total: ${net_total}\n")
+    file.write(f"Average Change: ${round(average_change,2)}\n")
+    file.write(f"Greatest Increase in Profits: {max_month} (${max_increase})\n")
     file.write(f"Greatest Decrease in Profits: {min_month} (${min_increase})")
