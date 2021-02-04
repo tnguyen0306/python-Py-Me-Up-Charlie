@@ -13,11 +13,6 @@ county_list = []
 candidate_list = []
 candidate_name = []
 
-candidate1 = 0
-candidate2 = 0
-candidate3 = 0
-candidate4 = 0
-
 #Open and read csv file with assigned path
 with open(election_csv) as csv_file:
     csv_reader = csv.reader(csv_file, delimiter = ",")
@@ -40,22 +35,28 @@ for x in candidate_list:
         candidate_name.append(x)
 
 #Get the total vote for each candidate
-#for i in candidate_list:
- #   if str(candidate_list[i]) == str(candidate_name[0]):
-  #      candidate1 = candidate1 +1
-   # elif str(candidate_list[i]) == str(candidate_name[1]):
-    #    candidate2 = candidate2 +1
-    #elif str(candidate_list[i]) == str(candidate_name[2]):
-     #   candidate3 = candidate3 +1
-    #elif str(candidate_list[i]) == str(candidate_name[3]):
-     #   candidate4 = candidate4 +1
-
 candidate1 = candidate_list.count(candidate_name[0])
 candidate2 = candidate_list.count(candidate_name[1])
 candidate3 = candidate_list.count(candidate_name[2])
 candidate4 = candidate_list.count(candidate_name[3])
 
-print(candidate1)
-print(candidate2)
-print(candidate3)
-print(candidate4)
+#Calulate the precentage of vote for each candidates
+percent1 = 100 * candidate1/total_vote
+percent2 = 100 * candidate2/total_vote
+percent3 = 100 * candidate3/total_vote
+percent4 = 100 * candidate4/total_vote
+percent_list = [percent1,percent2,percent3,percent4]
+
+#Find the winner
+winner_candidate = candidate_name[percent_list.index(max(percent_list))]
+
+#Print the Election results
+print(f"Election Results \n-------------------------")
+print(f"Total Votes: {total_vote}\n----------------------------")
+print(f"{candidate_name[0]}: {percent1:.3f}% ({candidate1})")
+print(f"{candidate_name[1]}: {percent2:.3f}% ({candidate2})")
+print(f"{candidate_name[2]}: {percent3:.3f}% ({candidate3})")
+print(f"{candidate_name[3]}: {percent4:.3f}% ({candidate4})")
+print(f"----------------------------")
+print(f"Winner: {winner_candidate}")
+print(f"----------------------------")
