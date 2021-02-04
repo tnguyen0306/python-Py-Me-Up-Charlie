@@ -57,6 +57,17 @@ print(f"{candidate_name[0]}: {percent1:.3f}% ({candidate1})")
 print(f"{candidate_name[1]}: {percent2:.3f}% ({candidate2})")
 print(f"{candidate_name[2]}: {percent3:.3f}% ({candidate3})")
 print(f"{candidate_name[3]}: {percent4:.3f}% ({candidate4})")
-print(f"----------------------------")
-print(f"Winner: {winner_candidate}")
-print(f"----------------------------")
+print(f"----------------------------\nWinner: {winner_candidate}\n----------------------------")
+
+#Assign the path to export the file
+output_file = os.path.join(os.path.dirname(os.path.abspath(__file__)), "analysis", "Election_Results.txt")
+
+#Export file with assigned path
+with open(output_file,"w") as file:
+    file.write(f"Election Results\n----------------------------\n")
+    file.write(f"Total Votes: {total_vote}\n----------------------------\n")
+    file.write(f"{candidate_name[0]}: {percent1:.3f}% ({candidate1})\n")
+    file.write(f"{candidate_name[1]}: {percent2:.3f}% ({candidate2})\n")
+    file.write(f"{candidate_name[2]}: {percent3:.3f}% ({candidate3})\n")
+    file.write(f"{candidate_name[3]}: {percent4:.3f}% ({candidate4})\n")
+    file.write(f"----------------------------\nWinner: {winner_candidate}\n----------------------------")
