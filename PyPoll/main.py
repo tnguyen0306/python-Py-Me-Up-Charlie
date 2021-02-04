@@ -40,15 +40,20 @@ for x in candidate_list:
         candidate_name.append(x)
 
 #Get the total vote for each candidate
-for i in candidate_list:
-    if str(candidate_list[i]) == str(candidate_name[0]):
-        candidate1 = candidate1 +1
-    elif str(candidate_list[i]) == str(candidate_name[1]):
-        candidate2 = candidate2 +1
-    elif str(candidate_list[i]) == str(candidate_name[2]):
-        candidate3 = candidate3 +1
-    elif str(candidate_list[i]) == str(candidate_name[3]):
-        candidate4 = candidate4 +1
+#for i in candidate_list:
+ #   if str(candidate_list[i]) == str(candidate_name[0]):
+  #      candidate1 = candidate1 +1
+   # elif str(candidate_list[i]) == str(candidate_name[1]):
+    #    candidate2 = candidate2 +1
+    #elif str(candidate_list[i]) == str(candidate_name[2]):
+     #   candidate3 = candidate3 +1
+    #elif str(candidate_list[i]) == str(candidate_name[3]):
+     #   candidate4 = candidate4 +1
+
+candidate1 = candidate_list.count(candidate_name[0])
+candidate2 = candidate_list.count(candidate_name[1])
+candidate3 = candidate_list.count(candidate_name[2])
+candidate4 = candidate_list.count(candidate_name[3])
 
 print(candidate1)
 print(candidate2)
